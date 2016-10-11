@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <link rel=stylesheet type=text/css href="{{url_for('static', filename='style.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Playfair+Display" rel="stylesheet">
+  </head>
+  <body>
+    <div class="card">
+      <hr>
+      <h1>Edit {{item.name}}</h1>
+      <hr>
+      <form action='{{url_for('editMenuItem',restaurant_id= restaurant_id, menu_id= item.id)}}' method='POST'>
+        </br>
+        <p>New Item Name:</p>
+        <input type='text' size="30" name="name" placeholder='{{item.name}}'>
+        <input type = 'submit' value = 'Rename'>
+        <a href='{{url_for('showMenu', restaurant_id= item.restaurant_id)}}'>Cancel</a>
+      </form>
+    </div>
+  </body>
+</html>
